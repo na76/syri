@@ -884,6 +884,8 @@ def groupSyn(tempInvBlocks, dupData, invDupData, invTLData, TLData, threshold, s
     tempTLData["class"] = "TL"
     
     allBlocks = pd.concat([allBlocks,tempInvBlocks, tempInvDupData, tempInvTLData, tempTLData, tempDupData])
+    # added by Nate
+    allBlocks = allBlocks.astype({"aStart": int, "aEnd": int, "bStart": int, "bEnd": int})
     allBlocks.index = range(allBlocks.shape[0])
     
     """
